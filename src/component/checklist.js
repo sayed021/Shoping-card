@@ -1,9 +1,50 @@
 import React from 'react';
 
 const CheckList=(props)=> {
+
+    function getCheckItem(_items) {
+        return(
+            _items.map(_item=>{
+                return(
+                    <li key={_item.id}>
+                        <label className="check-group"  >
+                            <input type="checkbox" checked={_item.checked}  />
+                            <span>{_item.title}</span>
+                        </label>
+                    </li>
+                )
+            })
+        )
+    }
+
     return (
         <div className="group-wrap">
-            <ul className="group list-unstyled">
+                {
+                    (props.checkitems||[]).map(item => {
+                        return (
+                            <ul className="group list-unstyled">
+                                <li key={item.id}>
+                                    <label className="check-group"  >
+                                        <input type="checkbox" checked={item.checked}  />
+                                        <span>{item.title}</span>
+                                    </label>
+
+                                    {
+                                        item.children.length > 0 ? (
+                                            <ul className="group list-unstyled">
+                                                {
+                                                    getCheckItem(item.children)
+                                                }
+                                            </ul>
+                                        ) : ('')
+                                    } 
+                                </li>
+                            </ul>
+                        )
+                    })
+                }
+            {/* <ul className="group list-unstyled">
+
                 <li>
                     <label className="check-group">
                         <input type="checkbox" checked />
@@ -83,7 +124,7 @@ const CheckList=(props)=> {
                         <span>Onshore asset integrity</span>
                     </label>
                 </li>
-            </ul>
+            </ul> */}
 
         </div>
     )

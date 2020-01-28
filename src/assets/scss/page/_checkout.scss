@@ -1,0 +1,65 @@
+/* checkout page style */
+.checkout-page {
+    display: flex;
+    flex-wrap: wrap;
+
+    .page-heading {
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #eee;
+        margin-bottom: 20px;
+    }
+
+    .checklist {
+        width: 60%;
+        padding-right: 20px;
+        padding-left: 30px;
+
+        @media screen and (max-width: 767px) {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #eee;
+        }
+    }
+    
+    .check-summary {
+        width: 40%;
+        padding: 30px;
+        border-left: 2px solid #eee;
+
+        @media screen and (max-width: 767px) {
+            width: 100%;
+            border-left: 0;
+            max-width: 450px;
+            margin: 0 auto;
+            padding: 10px 0;
+        }
+    }
+}
+
+.group-wrap .group .group {
+    padding-left: 52px;
+
+    @media screen and (max-width: 767px) {
+        padding-left: 30px;
+    }
+}
+  
+/* card total page css */
+.card-total-wrap {
+    padding: 20px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+}
+.card-total-wrap .ac-row > div:first-child {
+    padding-right: 15px;
+}
+.card-total-wrap .ac-row .btn {
+    padding: 5px 20px;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
